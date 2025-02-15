@@ -49,12 +49,8 @@ public partial class ViamaticaContext : DbContext
                 .HasColumnName("fecha_cierre");
             entity.Property(e => e.FechaInicio)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
-                .HasColumnType("timestamp without time zone")
                 .HasColumnName("fecha_inicio");
             entity.Property(e => e.IdUsuario).HasColumnName("id_usuario");
-            entity.Property(e => e.IpOrigen)
-                .HasMaxLength(45)
-                .HasColumnName("ip_origen");
             entity.Property(e => e.Token)
                 .HasMaxLength(255)
                 .HasColumnName("token");
@@ -174,9 +170,7 @@ public partial class ViamaticaContext : DbContext
             entity.Property(e => e.Eliminado)
                 .HasDefaultValue(false)
                 .HasColumnName("eliminado");
-            entity.Property(e => e.FechaExpiracion)
-                .HasColumnType("timestamp without time zone")
-                .HasColumnName("fecha_expiracion");
+            entity.Property(e => e.FechaExpiracion).HasColumnName("fecha_expiracion");
             entity.Property(e => e.FechaInicio)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp without time zone")
@@ -212,15 +206,12 @@ public partial class ViamaticaContext : DbContext
             entity.Property(e => e.IntentosInicioSesion)
                 .HasDefaultValue(0)
                 .HasColumnName("intentos_inicio_sesion");
-            entity.Property(e => e.Password)
-                .HasMaxLength(50)
-                .HasColumnName("password");
+            entity.Property(e => e.Password).HasColumnName("password");
             entity.Property(e => e.SessionActive)
                 .HasMaxLength(1)
                 .HasColumnName("session_active");
             entity.Property(e => e.Status)
                 .HasMaxLength(20)
-                .IsFixedLength()
                 .HasColumnName("status");
             entity.Property(e => e.Username)
                 .HasMaxLength(50)

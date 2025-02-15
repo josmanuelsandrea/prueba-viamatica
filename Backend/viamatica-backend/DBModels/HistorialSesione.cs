@@ -13,8 +13,6 @@ public partial class HistorialSesione
 
     public DateTime? FechaCierre { get; set; }
 
-    public string? IpOrigen { get; set; }
-
     public bool Exito { get; set; }
 
     public string? Token { get; set; }

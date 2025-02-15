@@ -1,0 +1,53 @@
+<div class="min-h-screen bg-gray-100 p-6">
+    <div class="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-gray-700 text-center">Gestión de Usuarios</h2>
+
+        <!-- Barra de búsqueda y carga masiva -->
+        <div class="flex justify-between items-center mt-6">
+            <input type="text" placeholder="Buscar usuario..."
+                class="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 w-1/2">
+            
+            <!-- Formulario para subir archivo -->
+            <form [formGroup]="uploadForm" (ngSubmit)="uploadFile()" enctype="multipart/form-data">
+                <input type="file" id="file" formControlName="file" accept=".xlsx, .csv" class="hidden" (change)="onFileChange($event)">
+                <label for="file" class="px-4 py-2 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 focus:ring-2 focus:ring-green-400">
+                    Cargar Usuarios (.xlsx / .csv)
+                </label>
+                <button *ngIf="selectedFile" type="submit" class="ml-4 px-4 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600">
+                    Subir Archivo
+                </button>
+            </form>
+        </div>
+
+        <!-- Tabla de usuarios -->
+        <div class="mt-6 overflow-x-auto">
+            <table class="w-full border-collapse bg-white shadow-md rounded-lg">
+                <thead>
+                    <tr class="bg-gray-200 text-gray-700">
+                        <th class="p-3 text-left">Nombre</th>
+                        <th class="p-3 text-left">Correo</th>
+                        <th class="p-3 text-center">Estado</th>
+                        <th class="p-3 text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users" class="border-b hover:bg-gray-100">
+                        <td class="p-3">{{ user.persona?.nombres }} {{ user.persona?.apellidos }}</td>
+                        <td class="p-3">{{ user.email }}</td>
+                        <td class="p-3 text-center">
+                            <span [class]="user.status === 'enabled' ? 'text-green-500' : 'text-red-500'">
+                                {{ user.status.toUpperCase() }}
+                            </span>
+                        </td>
+                        <td class="p-3 text-center">
+                            <button class="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Editar</button>
+                            <button *ngIf="true" class="ml-2 px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600">
+                                Desactivar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
