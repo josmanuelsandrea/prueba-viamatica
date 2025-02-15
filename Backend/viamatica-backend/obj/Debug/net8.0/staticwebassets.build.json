@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "fF9K46BXBmoNfLhIiZfKhOPsI6k+G/p/qbwjlb4zWFM=",
+  "Source": "viamatica-backend",
+  "BasePath": "_content/viamatica-backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
