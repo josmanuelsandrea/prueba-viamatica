@@ -13,6 +13,8 @@ export class UserManagementComponent {
     searchQuery: string = '';
     uploadForm: FormGroup;
     selectedFile: File | null = null;
+    isModalOpen: boolean = false;
+    selectedUser!: UsuarioDTO;
 
     constructor(private fb: FormBuilder, private userService: UserService) {
         this.uploadForm = this.fb.group({
@@ -22,6 +24,19 @@ export class UserManagementComponent {
 
     ngOnInit(): void {
         this.loadUsers();
+    }
+
+    closeModal(): void {
+        this.isModalOpen = false;
+    }
+
+    updateUserList(updatedUser: UsuarioDTO): void {
+        window.location.reload();
+    }
+
+    openModal(user: UsuarioDTO): void {
+        this.selectedUser = user;
+        this.isModalOpen = true;
     }
 
     loadUsers(): void {

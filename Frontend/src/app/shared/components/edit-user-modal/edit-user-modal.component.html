@@ -1,0 +1,25 @@
+<!-- Modal -->
+<div *ngIf="isOpen" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+        <h3 class="text-xl font-bold text-gray-700 text-center">Editar Usuario</h3>
+
+        <!-- Formulario de edición -->
+        <form [formGroup]="editUserForm" (ngSubmit)="saveUser()">
+            <label class="block mt-4 text-sm font-medium">Nombre:</label>
+            <input type="text" formControlName="nombres" class="w-full px-3 py-2 border rounded-lg">
+
+            <label class="block mt-4 text-sm font-medium">Apellidos:</label>
+            <input type="text" formControlName="apellidos" class="w-full px-3 py-2 border rounded-lg">
+
+            <!-- Botones -->
+            <div class="mt-6 flex justify-between">
+                <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+                    Guardar
+                </button>
+                <button type="button" (click)="closeModal()" class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">
+                    Cancelar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

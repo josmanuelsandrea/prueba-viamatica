@@ -39,10 +39,11 @@ namespace viamatica_backend.Repository
             return addedEntity.Entity;
         }
 
-        public async Task UpdateAsync(RolOpcione entity)
+        public async Task<RolOpcione> UpdateAsync(RolOpcione entity)
         {
-            _context.RolOpciones.Update(entity);
+            var response = _context.RolOpciones.Update(entity);
             await _context.SaveChangesAsync();
+            return response.Entity;
         }
 
         public async Task DeleteAsync(int id)

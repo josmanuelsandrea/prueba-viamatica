@@ -24,6 +24,8 @@ builder.Services.AddScoped<RolUsuarioRepository>();
 builder.Services.AddScoped<SesionesActivasService>();
 builder.Services.AddScoped<HistorialSesionesService>();
 builder.Services.AddScoped<RolRepository>();
+builder.Services.AddScoped<XLSXService>();
+builder.Services.AddScoped<PersonService>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddCors(options =>

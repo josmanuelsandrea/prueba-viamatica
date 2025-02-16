@@ -15,9 +15,12 @@ namespace viamatica_backend.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly UsuarioService _usuarioService;
-        public UsuarioController(UsuarioService usuarioService)
+        private readonly PersonService _personService;
+
+        public UsuarioController(UsuarioService usuarioService, PersonService personService)
         {
             _usuarioService = usuarioService;
+            _personService = personService;
         }
 
         [HttpGet("common")]
@@ -41,6 +44,13 @@ namespace viamatica_backend.Controllers
             }
 
             var result = await _usuarioService.CrearUsuario(persona);
+            return StatusCode((int)result.StatusCode, result);
+        }
+
+        [HttpPut("updatePerson")]
+        public async Task<ActionResult<APIResponse<UsuarioDTO>>> ActualizarUsuario(PersonaUpdateData data)
+        {
+            var result = await _personService.UpdatePersonData(data);
             return StatusCode((int)result.StatusCode, result);
         }
     }

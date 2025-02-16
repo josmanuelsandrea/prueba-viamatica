@@ -41,3 +41,9 @@ export interface IDRolNavigation {
     idRol:     number;
     nombreRol: string;
 }
+
+export interface PersonUpdate {
+    idPersona: number;
+    nombres:   string;
+    apellidos: string;
+}

@@ -1,4 +1,5 @@
-﻿using viamatica_backend.DBModels;
+﻿using OfficeOpenXml.FormulaParsing.LexicalAnalysis;
+using viamatica_backend.DBModels;
 using viamatica_backend.Repository;
 
 namespace viamatica_backend.Services
@@ -52,6 +53,32 @@ namespace viamatica_backend.Services
 
             var foundUser = foundSession.IdUsuarioNavigation;
             return foundUser;
+        }
+
+        public async Task<SesionesActiva?> ObtenerSesionPorToken(string token)
+        {
+            var sessions = await _sesionesActivaRepository.GetFilteredAsync(s => s.Token == token);
+            var foundSession = sessions.FirstOrDefault();
+
+            if (foundSession == null || foundSession.FechaExpiracion < DateTime.UtcNow)
+            {
+                return null; // Token inválido o expirado
+            }
+
+            return foundSession;
+        }
+
+        public async Task<bool> EliminarSesion(int id)
+        {
+            try
+            {
+                await _sesionesActivaRepository.DeleteAsync(id);
+                return true;
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
         }
     }
 }

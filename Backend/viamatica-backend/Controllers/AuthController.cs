@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml.FormulaParsing.LexicalAnalysis;
 using viamatica_backend.DTOS;
 using viamatica_backend.Models.Request;
 using viamatica_backend.Services;
@@ -21,6 +22,20 @@ namespace viamatica_backend.Controllers
         {
             var result = await _authService.Login(data);
             return result;
+        }
+
+        [HttpPost("whoami")]
+        public async Task<ActionResult<LoginResponseDTO>> WhoAmI([FromBody] TokenRequest token)
+        {
+            var result = await _authService.WhoAmI(token);
+            return StatusCode((int)result.StatusCode, result);
+        }
+
+        [HttpPost("logout")]
+        public async Task<ActionResult<bool>> Login([FromBody] TokenRequest token)
+        {
+            var result = await _authService.Logout(token);
+            return StatusCode((int)result.StatusCode, result.Data);
         }
     }
 }

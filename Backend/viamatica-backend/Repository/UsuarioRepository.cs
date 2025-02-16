@@ -37,10 +37,11 @@ namespace viamatica_backend.Repository
             return addedUser.Entity;
         }
 
-        public async Task UpdateAsync(Usuario entity)
+        public async Task<Usuario> UpdateAsync(Usuario entity)
         {
-            _context.Usuarios.Update(entity);
+            var response = _context.Usuarios.Update(entity);
             await _context.SaveChangesAsync();
+            return response.Entity;
         }
 
         public async Task DeleteAsync(int id)
