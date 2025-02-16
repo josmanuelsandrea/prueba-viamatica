@@ -16,6 +16,7 @@ namespace viamatica_backend.Configuration
             CreateMap<RolOpcione, OpcionesDTO>();
             CreateMap<Rol, RoleDTO>();
             CreateMap<Persona, PersonaDTO>();
+            CreateMap<HistorialSesione, HistorialSesioneDTO>();
         }
     }
 }

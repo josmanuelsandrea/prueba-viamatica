@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|c:\\users\\josmanuel\\documents\\development\\prueba-viamatica\\backend\\viamatica-backend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|solutionrelative:viamatica-backend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|c:\\users\\josmanuel\\documents\\development\\prueba-viamatica\\backend\\viamatica-backend\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|solutionrelative:viamatica-backend\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|c:\\users\\josmanuel\\documents\\development\\prueba-viamatica\\backend\\viamatica-backend\\dbmodels\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|solutionrelative:viamatica-backend\\dbmodels\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|c:\\users\\josmanuel\\documents\\development\\prueba-viamatica\\backend\\viamatica-backend\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|solutionrelative:viamatica-backend\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|c:\\users\\josmanuel\\documents\\development\\prueba-viamatica\\backend\\viamatica-backend\\models\\request\\tokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|solutionrelative:viamatica-backend\\models\\request\\tokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|c:\\users\\josmanuel\\documents\\development\\prueba-viamatica\\backend\\viamatica-backend\\services\\historialsesionesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|solutionrelative:viamatica-backend\\services\\historialsesionesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|c:\\users\\josmanuel\\documents\\development\\prueba-viamatica\\backend\\viamatica-backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|solutionrelative:viamatica-backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|c:\\users\\josmanuel\\documents\\development\\prueba-viamatica\\backend\\viamatica-backend\\configuration\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|solutionrelative:viamatica-backend\\configuration\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|c:\\users\\josmanuel\\documents\\development\\prueba-viamatica\\backend\\viamatica-backend\\services\\sesionesactivasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|solutionrelative:viamatica-backend\\services\\sesionesactivasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|c:\\users\\josmanuel\\documents\\development\\prueba-viamatica\\backend\\viamatica-backend\\dtos\\historialsesionedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5C9CC1A-50F3-47ED-AF50-1A09DF9572DC}|viamatica-backend\\viamatica-backend.csproj|solutionrelative:viamatica-backend\\dtos\\historialsesionedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UsuarioService.cs",
-              "DocumentMoniker": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Services\\UsuarioService.cs",
-              "RelativeDocumentMoniker": "viamatica-backend\\Services\\UsuarioService.cs",
-              "ToolTip": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Services\\UsuarioService.cs",
-              "RelativeToolTip": "viamatica-backend\\Services\\UsuarioService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAawAAAAAAAAAAAAAAAAA==",
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "viamatica-backend\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "viamatica-backend\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADsAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T00:52:57.311Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Rol.cs",
-              "DocumentMoniker": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\DBModels\\Rol.cs",
-              "RelativeDocumentMoniker": "viamatica-backend\\DBModels\\Rol.cs",
-              "ToolTip": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\DBModels\\Rol.cs",
-              "RelativeToolTip": "viamatica-backend\\DBModels\\Rol.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T00:46:44.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TokenRequest.cs",
-              "DocumentMoniker": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Models\\Request\\TokenRequest.cs",
-              "RelativeDocumentMoniker": "viamatica-backend\\Models\\Request\\TokenRequest.cs",
-              "ToolTip": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Models\\Request\\TokenRequest.cs",
-              "RelativeToolTip": "viamatica-backend\\Models\\Request\\TokenRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T00:15:30.113Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "viamatica-backend\\Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Services\\AuthService.cs",
-              "RelativeToolTip": "viamatica-backend\\Services\\AuthService.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAmwCoAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T00:03:25.189Z",
+              "WhenOpened": "2025-02-16T01:47:06.629Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "viamatica-backend\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "viamatica-backend\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAvwBsAAABYAAAAAAAAAA==",
+              "Title": "HistorialSesioneDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\DTOS\\HistorialSesioneDTO.cs",
+              "RelativeDocumentMoniker": "viamatica-backend\\DTOS\\HistorialSesioneDTO.cs",
+              "ToolTip": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\DTOS\\HistorialSesioneDTO.cs",
+              "RelativeToolTip": "viamatica-backend\\DTOS\\HistorialSesioneDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T00:01:58.938Z",
+              "WhenOpened": "2025-02-16T01:45:48.209Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SesionesActivasService.cs",
-              "DocumentMoniker": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Services\\SesionesActivasService.cs",
-              "RelativeDocumentMoniker": "viamatica-backend\\Services\\SesionesActivasService.cs",
-              "ToolTip": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Services\\SesionesActivasService.cs",
-              "RelativeToolTip": "viamatica-backend\\Services\\SesionesActivasService.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAawEEAAAANAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Configuration\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "viamatica-backend\\Configuration\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Configuration\\MappingProfile.cs",
+              "RelativeToolTip": "viamatica-backend\\Configuration\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-15T23:55:40.553Z",
+              "WhenOpened": "2025-02-16T01:44:53.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HistorialSesionesService.cs",
+              "DocumentMoniker": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Services\\HistorialSesionesService.cs",
+              "RelativeDocumentMoniker": "viamatica-backend\\Services\\HistorialSesionesService.cs",
+              "ToolTip": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Services\\HistorialSesionesService.cs",
+              "RelativeToolTip": "viamatica-backend\\Services\\HistorialSesionesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T01:41:47.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "viamatica-backend\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\josmanuel\\Documents\\development\\prueba-viamatica\\Backend\\viamatica-backend\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "viamatica-backend\\Services\\UsuarioService.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAEwIsAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T01:34:58.559Z",
               "EditorCaption": ""
             }
           ]

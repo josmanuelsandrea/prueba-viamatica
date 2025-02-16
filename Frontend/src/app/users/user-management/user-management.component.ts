@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsuarioDTO } from 'src/app/interfaces/general.interfaces';
+import { SessionHistory, UsuarioDTO } from 'src/app/interfaces/general.interfaces';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,6 +15,9 @@ export class UserManagementComponent {
     selectedFile: File | null = null;
     isModalOpen: boolean = false;
     selectedUser!: UsuarioDTO;
+    isHistoryModalOpen: boolean = false; // Estado del modal de historial
+    sessionHistory: SessionHistory[] = []; // Lista del historial de sesiones
+
 
     constructor(private fb: FormBuilder, private userService: UserService) {
         this.uploadForm = this.fb.group({
@@ -24,6 +27,17 @@ export class UserManagementComponent {
 
     ngOnInit(): void {
         this.loadUsers();
+    }
+
+    openHistoryModal(user: UsuarioDTO): void {
+        this.selectedUser = user;
+        this.isHistoryModalOpen = true;
+        // this.loadSessionHistory(user.idUsuario); // Cargar historial del usuario seleccionado
+    }
+
+    // 🔹 NUEVO MÉTODO PARA CERRAR EL MODAL DE HISTORIAL
+    closeHistoryModal(): void {
+        this.isHistoryModalOpen = false;
     }
 
     closeModal(): void {

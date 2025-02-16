@@ -5,6 +5,14 @@
         (close)="closeModal()"
         (userUpdated)="updateUserList($event)">
     </app-edit-user-modal>
+
+    <app-session-history-modal
+        [isOpen]="isHistoryModalOpen"
+        [user]="selectedUser"
+        [sessionHistory]="sessionHistory"
+        (close)="closeHistoryModal()">
+    </app-session-history-modal>
+    
     <div class="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-700 text-center">Gestión de Usuarios</h2>
 
@@ -49,6 +57,9 @@
                             <button (click)="openModal(user)" class="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Editar</button>
                             <button *ngIf="true" class="ml-2 px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600">
                                 Desactivar
+                            </button>
+                            <button (click)="openHistoryModal(user)" class="ml-2 px-2 py-1 bg-purple-500 text-white rounded hover:bg-purple-600">
+                                Ver Historial
                             </button>
                         </td>
                     </tr>

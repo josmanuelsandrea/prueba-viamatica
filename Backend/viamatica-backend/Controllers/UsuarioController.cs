@@ -53,5 +53,12 @@ namespace viamatica_backend.Controllers
             var result = await _personService.UpdatePersonData(data);
             return StatusCode((int)result.StatusCode, result);
         }
+
+        [HttpGet("sessionHistory/{userId}")]
+        public async Task<ActionResult<APIResponse<IEnumerable<HistorialSesioneDTO>>>> ObtenerHistorialDeSesiones(int userId)
+        {
+            var result = await _usuarioService.ObtenerHistorialDeIniciosDeSesion(userId);
+            return StatusCode((int)result.StatusCode, result);
+        }
     }
 }

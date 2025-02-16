@@ -17,10 +17,11 @@ namespace viamatica_backend.Services
         private readonly PersonaRepository _personaRepository;
         private readonly RolUsuarioRepository _rolUsuarioRepository;
         private readonly RolRepository _rolRepository;
+        private readonly HistorialSesionesService _historialSesionesService;
         private readonly ViamaticaContext _context;
         private readonly IMapper _mapper;
 
-        public UsuarioService(UsuarioRepository usuarioRepository, PersonaRepository personaRepository, RolUsuarioRepository rolUsuarioRepository, RolRepository rolRepository, ViamaticaContext context, IMapper mapper)
+        public UsuarioService(UsuarioRepository usuarioRepository, PersonaRepository personaRepository, RolUsuarioRepository rolUsuarioRepository, RolRepository rolRepository, ViamaticaContext context, IMapper mapper, HistorialSesionesService historialSesionesService)
         {
             _usuarioRepository = usuarioRepository;
             _personaRepository = personaRepository;
@@ -28,6 +29,7 @@ namespace viamatica_backend.Services
             _rolRepository = rolRepository;
             _context = context;
             _mapper = mapper;
+            _historialSesionesService = historialSesionesService;
         }
 
         public async Task<APIResponse<UsuarioDTO>> ObtenerUsuarioPorId(int id)
@@ -130,6 +132,14 @@ namespace viamatica_backend.Services
 
             var response = _mapper.Map<IEnumerable<UsuarioDTO>>(users);
             return new APIResponse<IEnumerable<UsuarioDTO>>(response, "Usuarios encontrados", HttpStatusCode.OK);
+        }
+
+        public async Task<APIResponse<IEnumerable<HistorialSesioneDTO>>> ObtenerHistorialDeIniciosDeSesion(int userId)
+        {
+            var historial = await _historialSesionesService.ObtenerHistorialPorUsuario(userId);
+            var response = _mapper.Map<IEnumerable<HistorialSesioneDTO>>(historial);
+
+            return new APIResponse<IEnumerable<HistorialSesioneDTO>>(response, "Historial de sesiones", HttpStatusCode.OK);
         }
     }
 }

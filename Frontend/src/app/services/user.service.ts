@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { APIResponse, PersonUpdate, UsuarioDTO } from '../interfaces/general.interfaces';
+import { APIResponse, PersonUpdate, SessionHistory, UsuarioDTO } from '../interfaces/general.interfaces';
 
 @Injectable({
     providedIn: 'root'
@@ -32,4 +32,7 @@ export class UserService {
         return this.http.post(`${this.apiUrl}/upload/xlsx`, formData);
     }
     
+    userSessionHistory(userId: number): Observable<APIResponse<SessionHistory[]>> {
+        return this.http.get<APIResponse<SessionHistory[]>>(`${this.apiUrl}/Usuario/sessionHistory/${userId}`);
+    }
 }

@@ -22,5 +22,10 @@ namespace viamatica_backend.Services
 
             await _historialSesioneRepository.AddAsync(nuevoHistorial);
         }
+
+        public async Task<IEnumerable<HistorialSesione>> ObtenerHistorialPorUsuario(int userId)
+        {
+            return await _historialSesioneRepository.GetFilteredAsync(h => h.IdUsuario == userId);
+        }
     }
 }

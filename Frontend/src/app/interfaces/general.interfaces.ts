@@ -47,3 +47,13 @@ export interface PersonUpdate {
     nombres:   string;
     apellidos: string;
 }
+
+export interface SessionHistory {
+    idHistorial: number;
+    idUsuario:   number;
+    fechaInicio: Date;
+    fechaCierre: Date;
+    exito:       boolean;
+    token:       string;
+    eliminado:   boolean;
+}

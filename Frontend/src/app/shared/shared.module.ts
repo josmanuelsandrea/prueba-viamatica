@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EditUserModalComponent } from './components/edit-user-modal/edit-user-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SessionHistoryModalComponent } from './components/session-history-modal/session-history-modal.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    EditUserModalComponent
+    EditUserModalComponent,
+    SessionHistoryModalComponent
   ],
   imports: [
     CommonModule,
@@ -17,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   exports: [
     EditUserModalComponent,
+    SessionHistoryModalComponent,
     NavbarComponent
   ]
 })
