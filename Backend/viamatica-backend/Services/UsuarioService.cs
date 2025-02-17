@@ -141,5 +141,43 @@ namespace viamatica_backend.Services
 
             return new APIResponse<IEnumerable<HistorialSesioneDTO>>(response, "Historial de sesiones", HttpStatusCode.OK);
         }
+
+        public async Task<APIResponse<UsuarioDTO?>> CambiarEstadoDeUsuario(int userId)
+        {
+            try
+            {
+                var foundUser = await _usuarioRepository.GetByIdAsync(userId);
+                if (foundUser == null)
+                {
+                    return new APIResponse<UsuarioDTO?>(null, "Usuario no encontrado", HttpStatusCode.NotFound);
+                }
+                if (foundUser.Status == UserStatus.ENABLED) { foundUser.Status = UserStatus.DISABLED; }
+                else { foundUser.Status = UserStatus.ENABLED; }
+
+                var modifiedUser = await _usuarioRepository.UpdateAsync(foundUser);
+                var mapperResponse = _mapper.Map<UsuarioDTO>(modifiedUser);
+                return new APIResponse<UsuarioDTO?>(mapperResponse, "Usuario actualizado", HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return new APIResponse<UsuarioDTO?>(null, "Usuario no encontrado", HttpStatusCode.NotFound);
+            }
+        }
+
+        public async Task<APIResponse<IEnumerable<UsuarioDTO?>>> BuscarUsuarioPorNombre(string nombre)
+        {
+            var personas = await _personaRepository.GetFilteredAsync(x => x.Nombres.ToLower().Contains(nombre.ToLower()));
+
+            // Obtener los IDs de las personas encontradas
+            var personasIds = personas.Select(p => p.IdPersona).ToList();
+
+            // Filtrar usuarios que estén asignados a esas personas
+            var usuariosDePersonas = await _usuarioRepository.GetFilteredAsync(u => personasIds.Contains(u.IdPersona));
+
+            var response = _mapper.Map<IEnumerable<UsuarioDTO>>(usuariosDePersonas);
+
+            return new APIResponse<IEnumerable<UsuarioDTO?>>(response, "Usuarios encontrados", HttpStatusCode.OK);
+        }
     }
 }

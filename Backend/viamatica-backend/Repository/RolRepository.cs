@@ -1,5 +1,7 @@
-﻿using System.Linq.Expressions;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 using viamatica_backend.DBModels;
 using viamatica_backend.Interfaces;
 
@@ -16,7 +18,9 @@ namespace viamatica_backend.Repository
 
         public async Task<IEnumerable<Rol>> GetAllAsync()
         {
-            return await _context.Rols.ToListAsync();
+            return await _context.Rols
+                .FromSqlRaw("SELECT * FROM sp_obtener_roles()")
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<Rol>> GetFilteredAsync(Expression<Func<Rol, bool>> filter)
@@ -26,31 +30,32 @@ namespace viamatica_backend.Repository
 
         public async Task<Rol?> GetByIdAsync(int id)
         {
-            return await _context.Rols.FindAsync(id);
+            return await _context.Rols
+                .FromSqlRaw("SELECT * FROM sp_obtener_rol_por_id({0})", id)
+                .FirstOrDefaultAsync();
         }
 
         public async Task<Rol> AddAsync(Rol entity)
         {
-            var addedRol = await _context.Rols.AddAsync(entity);
-            await _context.SaveChangesAsync();
-            return addedRol.Entity;
+            var newId = await _context.Database
+                .ExecuteSqlRawAsync("SELECT sp_crear_rol({0})", entity.NombreRol);
+
+            entity.IdRol = newId;
+            return entity;
         }
 
         public async Task<Rol> UpdateAsync(Rol entity)
         {
-            var response = _context.Rols.Update(entity);
-            await _context.SaveChangesAsync();
-            return response.Entity;
+            await _context.Database
+                .ExecuteSqlRawAsync("SELECT sp_actualizar_rol({0}, {1})", entity.IdRol, entity.NombreRol);
+
+            return entity;
         }
 
         public async Task DeleteAsync(int id)
         {
-            var entity = await GetByIdAsync(id);
-            if (entity != null)
-            {
-                _context.Rols.Remove(entity);
-                await _context.SaveChangesAsync();
-            }
+            await _context.Database
+                .ExecuteSqlRawAsync("SELECT sp_eliminar_rol({0})", id);
         }
 
         public async Task<bool> ExistsAsync(Expression<Func<Rol, bool>> predicate)

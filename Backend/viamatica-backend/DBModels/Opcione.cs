@@ -11,5 +11,7 @@ public partial class Opcione
 
     public bool Eliminado { get; set; }
 
+    public string Url { get; set; } = null!;
+
     public virtual ICollection<RolOpcione> RolOpciones { get; set; } = new List<RolOpcione>();
 }

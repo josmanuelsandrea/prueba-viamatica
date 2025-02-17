@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml.FormulaParsing.LexicalAnalysis;
 using viamatica_backend.DTOS;
 using viamatica_backend.Models.Request;
+using viamatica_backend.Models.Utility;
 using viamatica_backend.Services;
 
 namespace viamatica_backend.Controllers
@@ -32,10 +33,17 @@ namespace viamatica_backend.Controllers
         }
 
         [HttpPost("logout")]
-        public async Task<ActionResult<bool>> Login([FromBody] TokenRequest token)
+        public async Task<ActionResult<bool>> Logout([FromBody] TokenRequest token)
         {
             var result = await _authService.Logout(token);
             return StatusCode((int)result.StatusCode, result.Data);
+        }
+
+        [HttpPost("forgot-password")]
+        public async Task<ActionResult<APIResponse<string>>> ForgotPassword([FromBody] ForgotPassword forgotPasswordData)
+        {
+            var result = await _authService.ForgotPassword(forgotPasswordData);
+            return StatusCode((int)result.StatusCode, result);
         }
     }
 }

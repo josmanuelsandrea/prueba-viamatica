@@ -1,5 +1,4 @@
-﻿using OfficeOpenXml.FormulaParsing.LexicalAnalysis;
-using viamatica_backend.DBModels;
+﻿using viamatica_backend.DBModels;
 using viamatica_backend.Repository;
 
 namespace viamatica_backend.Services
@@ -79,6 +78,12 @@ namespace viamatica_backend.Services
                 Console.WriteLine(ex);
                 return false;
             }
+        }
+
+        public async Task<IEnumerable<SesionesActiva>> ObtenerSesionesExpiradas()
+        {
+            var ahora = DateTime.UtcNow;
+            return await _sesionesActivaRepository.GetFilteredAsync(s => s.FechaExpiracion <= ahora);
         }
     }
 }

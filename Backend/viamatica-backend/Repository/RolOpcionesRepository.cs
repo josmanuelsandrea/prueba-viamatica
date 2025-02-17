@@ -24,6 +24,7 @@ namespace viamatica_backend.Repository
             return await _context.RolOpciones
                 .Where(filter)
                 .Include(x => x.IdRolNavigation)
+                .Include(x => x.IdOpcionNavigation)
                 .ToListAsync();
         }
 

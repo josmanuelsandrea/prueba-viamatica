@@ -60,5 +60,19 @@ namespace viamatica_backend.Controllers
             var result = await _usuarioService.ObtenerHistorialDeIniciosDeSesion(userId);
             return StatusCode((int)result.StatusCode, result);
         }
+
+        [HttpGet("search")]
+        public async Task<ActionResult<APIResponse<IEnumerable<UsuarioDTO>>>> ObtenerHistorialDeSesiones([FromQuery] string name)
+        {
+            var result = await _usuarioService.BuscarUsuarioPorNombre(name);
+            return StatusCode((int)result.StatusCode, result);
+        }
+
+        [HttpPut("deactivate/{userId}")]
+        public async Task<ActionResult<APIResponse<UsuarioDTO?>>> AlternarEstadoDeUsuario(int userId)
+        {
+            var result = await _usuarioService.CambiarEstadoDeUsuario(userId);
+            return StatusCode((int)result.StatusCode, result);
+        }
     }
 }

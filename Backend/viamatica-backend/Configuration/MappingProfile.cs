@@ -13,10 +13,11 @@ namespace viamatica_backend.Configuration
                 .ForMember(dest => dest.Persona, opt => opt.MapFrom(src => src.IdPersonaNavigation));
             CreateMap<PersonaRequest, Persona>();
             CreateMap<RolUsuario, RoleUserDTO>();
-            CreateMap<RolOpcione, OpcionesDTO>();
+            CreateMap<RolOpcione, RolOpcionesDTO>();
             CreateMap<Rol, RoleDTO>();
             CreateMap<Persona, PersonaDTO>();
             CreateMap<HistorialSesione, HistorialSesioneDTO>();
+            CreateMap<Opcione, OpcionDTO>();
         }
     }
 }

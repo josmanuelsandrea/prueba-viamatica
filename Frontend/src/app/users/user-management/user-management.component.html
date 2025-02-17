@@ -18,8 +18,7 @@
 
         <!-- Barra de búsqueda y carga masiva -->
         <div class="flex justify-between items-center mt-6">
-            <input type="text" placeholder="Buscar usuario..."
-                class="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 w-1/2">
+            <input type="text" [formControl]="searchControl" placeholder="Buscar usuario por nombre..." class="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 w-1/2">
             
             <!-- Formulario para subir archivo -->
             <form [formGroup]="uploadForm" (ngSubmit)="uploadFile()" enctype="multipart/form-data">
@@ -41,11 +40,12 @@
                         <th class="p-3 text-left">Nombre</th>
                         <th class="p-3 text-left">Correo</th>
                         <th class="p-3 text-center">Estado</th>
+                        <th class="p-3 text-center">Sesion</th>
                         <th class="p-3 text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let user of users" class="border-b hover:bg-gray-100">
+                    <tr *ngFor="let user of filteredUsers" class="border-b hover:bg-gray-100">
                         <td class="p-3">{{ user.persona?.nombres }} {{ user.persona?.apellidos }}</td>
                         <td class="p-3">{{ user.email }}</td>
                         <td class="p-3 text-center">
@@ -54,12 +54,15 @@
                             </span>
                         </td>
                         <td class="p-3 text-center">
+                            <p class="text-center">{{ user.sessionActive == 'T' ? 'Activa' : 'Inactiva' }}</p>
+                        </td>
+                        <td class="p-3 text-center">
                             <button (click)="openModal(user)" class="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Editar</button>
-                            <button *ngIf="true" class="ml-2 px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600">
+                            <button *ngIf="true" class="ml-2 px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600" (click)="deactivateUser(user.idUsuario)">
                                 Desactivar
                             </button>
                             <button (click)="openHistoryModal(user)" class="ml-2 px-2 py-1 bg-purple-500 text-white rounded hover:bg-purple-600">
-                                Ver Historial
+                                Ver Historial de Sesiones
                             </button>
                         </td>
                     </tr>

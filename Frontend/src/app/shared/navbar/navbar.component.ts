@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuOptions } from 'src/app/interfaces/auth.interface';
 import { UsuarioDTO } from 'src/app/interfaces/general.interfaces';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserStateService } from 'src/app/services/user-state.service';
@@ -18,12 +19,19 @@ export class NavbarComponent implements OnInit {
         ) { }
 
     loggedUser: UsuarioDTO | null = null;
+    menuOptions: MenuOptions[] = [];
 
 
     ngOnInit(): void {
         this.userService.onUserChange().subscribe(user => {
             this.loggedUser = user;
+            this.menuOptions = user?.permisos!
+            console.log(this.menuOptions);
         })
+    }
+
+    redirectToProfile(): void {
+        this.router.navigate(['/dashboard']);
     }
 
     logout(): void {
@@ -31,6 +39,7 @@ export class NavbarComponent implements OnInit {
             next: () => {
                 this.authService.deleteToken();
                 this.router.navigate(['/login']);        
+                this.userService.clearUser();
             },
             error: (error) => {
                 alert('Error al cerrar sesión');

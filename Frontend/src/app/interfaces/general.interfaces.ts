@@ -1,3 +1,5 @@
+import { MenuOptions } from "./auth.interface";
+
 export interface APIResponse<T> {
     data:       T;
     message:    string;
@@ -16,7 +18,7 @@ export interface UsuarioDTO {
     eliminado:            boolean;
     persona?: IDPersonaNavigation;
     roles:                Role[];
-    permisos:             Permiso[];
+    permisos:             MenuOptions[];
 }
 
 export interface IDPersonaNavigation {
@@ -26,11 +28,6 @@ export interface IDPersonaNavigation {
     identificacion:  string;
     fechaNacimiento: Date;
     eliminado:       boolean;
-}
-
-export interface Permiso {
-    idRol:    number;
-    idOpcion: number;
 }
 
 export interface Role {

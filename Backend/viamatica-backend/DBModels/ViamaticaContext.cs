@@ -44,9 +44,7 @@ public partial class ViamaticaContext : DbContext
                 .HasDefaultValue(false)
                 .HasColumnName("eliminado");
             entity.Property(e => e.Exito).HasColumnName("exito");
-            entity.Property(e => e.FechaCierre)
-                .HasColumnType("timestamp without time zone")
-                .HasColumnName("fecha_cierre");
+            entity.Property(e => e.FechaCierre).HasColumnName("fecha_cierre");
             entity.Property(e => e.FechaInicio)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnName("fecha_inicio");
@@ -73,6 +71,10 @@ public partial class ViamaticaContext : DbContext
             entity.Property(e => e.NombreOpcion)
                 .HasMaxLength(50)
                 .HasColumnName("nombre_opcion");
+            entity.Property(e => e.Url)
+                .HasMaxLength(255)
+                .HasDefaultValueSql("'/'::character varying")
+                .HasColumnName("url");
         });
 
         modelBuilder.Entity<Persona>(entity =>

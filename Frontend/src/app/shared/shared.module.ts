@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { EditUserModalComponent } from './components/edit-user-modal/edit-user-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SessionHistoryModalComponent } from './components/session-history-modal/session-history-modal.component';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -15,7 +16,8 @@ import { SessionHistoryModalComponent } from './components/session-history-modal
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   exports: [
     EditUserModalComponent,

@@ -25,7 +25,7 @@ export class UserService {
     }
 
     deactivateUser(userId: number): Observable<any> {
-        return this.http.patch(`${this.apiUrl}/${userId}/deactivate`, {});
+        return this.http.put(`${this.apiUrl}/Usuario/deactivate/${userId}`, null);
     }
 
     uploadUsers(formData: FormData): Observable<any> {
@@ -34,5 +34,9 @@ export class UserService {
     
     userSessionHistory(userId: number): Observable<APIResponse<SessionHistory[]>> {
         return this.http.get<APIResponse<SessionHistory[]>>(`${this.apiUrl}/Usuario/sessionHistory/${userId}`);
+    }
+
+    searchUsersByName(name: string): Observable<APIResponse<UsuarioDTO[]>> {
+        return this.http.get<APIResponse<UsuarioDTO[]>>(`${this.apiUrl}/Usuario/search?name=${name}`);
     }
 }

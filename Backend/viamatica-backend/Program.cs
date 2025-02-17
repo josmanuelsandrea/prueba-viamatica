@@ -3,6 +3,7 @@ using viamatica_backend.Configuration;
 using viamatica_backend.DBModels;
 using viamatica_backend.Repository;
 using viamatica_backend.Services;
+using viamatica_backend.Services.BackgroundJobs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,7 @@ builder.Services.AddScoped<HistorialSesionesService>();
 builder.Services.AddScoped<RolRepository>();
 builder.Services.AddScoped<XLSXService>();
 builder.Services.AddScoped<PersonService>();
+builder.Services.AddScoped<OpcionesRepository>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddCors(options =>
@@ -38,6 +40,8 @@ builder.Services.AddCors(options =>
                   .AllowAnyMethod();
         });
 });
+
+builder.Services.AddHostedService<SessionExpirationChecker>();
 
 var app = builder.Build();
 

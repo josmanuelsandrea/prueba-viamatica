@@ -23,6 +23,7 @@ namespace viamatica_backend.Repository
         {
             return await _context.SesionesActivas.Where(filter)
                 .Include(x => x.IdUsuarioNavigation)
+                    .ThenInclude(x => x.IdPersonaNavigation)
                 .ToListAsync();
         }
 

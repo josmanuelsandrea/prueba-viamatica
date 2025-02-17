@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserStateService } from './user-state.service';
 import { APIResponse, UsuarioDTO } from '../interfaces/general.interfaces';
+import { ForgotPasswordRequest, LoginData } from '../interfaces/auth.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -15,8 +16,8 @@ export class AuthService {
         private UserStateService: UserStateService
     ) { }
 
-    login(email: string, password: string): Observable<any> {
-        return this.http.post(`${this.apiUrl}/login`, { email, password });
+    login(data: LoginData): Observable<any> {
+        return this.http.post(`${this.apiUrl}/login`, data);
     }
 
     storeToken(token: string): void {
@@ -37,5 +38,9 @@ export class AuthService {
 
     isAuthenticated(): Observable<APIResponse<UsuarioDTO>> {
         return this.http.post<APIResponse<UsuarioDTO>>(`${this.apiUrl}/whoami`, {token: this.getToken()});
+    }
+
+    forgotPassword(data: ForgotPasswordRequest): Observable<APIResponse<string>> {
+        return this.http.post<APIResponse<string>>(`${this.apiUrl}/forgot-password`, data);
     }
 }

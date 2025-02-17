@@ -15,6 +15,6 @@ namespace viamatica_backend.DTOS
         public bool Eliminado { get; set; }
         public PersonaDTO? Persona { get; set; }
         public IEnumerable<RoleUserDTO>? Roles { get; set; }
-        public IEnumerable<OpcionesDTO>? Permisos { get; set; }
+        public IEnumerable<OpcionDTO>? Permisos { get; set; }
     }
 }

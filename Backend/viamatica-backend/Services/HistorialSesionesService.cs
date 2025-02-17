@@ -27,5 +27,16 @@ namespace viamatica_backend.Services
         {
             return await _historialSesioneRepository.GetFilteredAsync(h => h.IdUsuario == userId);
         }
+
+        public async Task MarcarSesionComoCerrada(int userId)
+        {
+            var historialSesion = await _historialSesioneRepository.GetFilteredAsync(h => h.IdUsuario == userId && h.FechaCierre == null);
+
+            foreach (var sesion in historialSesion)
+            {
+                sesion.FechaCierre = DateTime.UtcNow;
+                await _historialSesioneRepository.UpdateAsync(sesion);
+            }
+        }
     }
 }
