@@ -18,14 +18,16 @@ export class SessionHistoryModalComponent {
     }
 
     ngOnInit(): void {
-        this.userService.userSessionHistory(this.user.idUsuario).subscribe({
-            next: (response) => {
-                this.sessionHistory = response.data;
-            },
-            error: (error) => {
-                console.error('Error al cargar el historial de sesiones', error);
-            }
-        })
+        if (this.user) {
+            this.userService.userSessionHistory(this.user.idUsuario).subscribe({
+                next: (response) => {
+                    this.sessionHistory = response.data;
+                },
+                error: (error) => {
+                    console.error('Error al cargar el historial de sesiones', error);
+                }
+            })
+        }
     }
 
     ngOnChanges(changes: SimpleChanges): void {

@@ -64,6 +64,10 @@ export class LoginComponent {
                         this.authService.storeToken(response.token);
                         this.userService.setUser(response.user);
                         this.router.navigate(['/admin']);
+                    } else {
+                        this.authService.storeToken(response.token);
+                        this.userService.setUser(response.user);
+                        this.router.navigate(['/dashboard']);
                     }
                 } else {
                     this.errorMessage = response.message + '. O posiblemente tu usuario esta deshabilitado.';

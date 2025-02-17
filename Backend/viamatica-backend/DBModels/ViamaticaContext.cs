@@ -132,7 +132,7 @@ public partial class ViamaticaContext : DbContext
 
             entity.HasOne(d => d.IdOpcionNavigation).WithMany(p => p.RolOpciones)
                 .HasForeignKey(d => d.IdOpcion)
-                .HasConstraintName("fk_rol_opciones_rel_opcion");
+                .HasConstraintName("fk_rol_opcione_opcion");
 
             entity.HasOne(d => d.IdRolNavigation).WithMany(p => p.RolOpciones)
                 .HasForeignKey(d => d.IdRol)
